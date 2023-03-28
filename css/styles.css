@@ -1,0 +1,101 @@
+html{ box-sizing: border-box; }
+*, *::before, *::after{ box-sizing: inherit; }
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: linear-gradient(45deg, rgb(179, 197, 107), transparent);
+    background-attachment: fixed;
+    background-color: rgb(230, 212, 141);
+    padding: 15px;
+}
+.container{
+    max-width: 670px;
+    min-height: 85vh;
+    margin: 20px auto;
+    padding: 25px 50px;
+    border-radius: 15px;
+    background-color: #ffffffe0;
+}
+
+/* fix text */
+h1, p{
+    line-height: 1.5;
+    margin: 0;
+}
+h1{
+    text-align: center;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.inputBox, li{
+    /* expand content to the full width of container + push buttons to end */
+    display:grid;
+    grid-template-columns: 1fr auto;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+}
+input{
+    padding: 10px;
+    
+    /* erase default input formatting */
+    background-color: transparent;
+    border: none;   
+
+    transition: all .1s ease-in;
+}
+input:focus{
+    /* turn off box highlight/outline when selected */
+    outline: none;
+}
+input:hover, input:focus{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+button{
+    height: 2rem;
+    width: 2rem;
+    padding: 0;
+    margin: .4rem;
+    
+    transition: all .1s ease-in;
+
+    text-align: center;
+    
+    /* formatting delete button (since there's no class on it, no separate section) */
+    border-radius: 50%;
+    background-color: #fff;
+    color: #c00;
+    border: 1px solid #a00;
+    font-size: .8em;
+    font-weight: 700;
+}
+button:hover {
+    color: #fff;
+    background-color: #900;
+}
+/* formatting submit button */
+#submitBtn{
+    border-radius: 25%;
+    background-color: #fff;
+    color: #22f;
+    border: 1px solid #ccf;
+    font-size: 1.7em;
+    font-weight: normal;
+}
+#submitBtn:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #bbf;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li p{
+    padding: 10px;
+    
+    /* fix potential li text overflow */
+    word-break: break-word;
+    hyphens: auto;
+}
